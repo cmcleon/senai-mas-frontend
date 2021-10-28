@@ -1,12 +1,14 @@
-import {BrowserRouterProps as Router} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from './routes';
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <Router>
-      <h1>Frontend My Activies Space </h1>
+      <Routes/>
       <GlobalStyle />
     </Router>
     );
   }
+  
   export default App;
