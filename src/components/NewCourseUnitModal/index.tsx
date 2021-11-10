@@ -3,6 +3,7 @@ import {Container} from './styles';
 import {FiX} from 'react-icons/fi';
 import {useForm} from 'react-hook-form';
 import { Error } from '../../pages/Login/styles';
+import api from '../../services/api';
 
 interface NewCourseUnitProps{
     isOpen: boolean;
@@ -17,7 +18,7 @@ interface NewCourseUnitDate{
 
 export function NewCourseUnitModal({isOpen, onRequestClose}:NewCourseUnitProps){
     const {register, handleSubmit, formState:{errors}} = useForm();
-    const onSubmit = handleSubmit(data => alert(JSON.stringify(data)));
+    const onSubmit = handleSubmit(data => api.post('/courseuunit', data).then(response=> alert(response.data)));
 
     return(
         <Modal

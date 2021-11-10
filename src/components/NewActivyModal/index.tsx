@@ -3,6 +3,7 @@ import {Container} from './styles';
 import {FiX} from 'react-icons/fi';
 import {useForm} from 'react-hook-form';
 import { Error } from '../../pages/Login/styles';
+import api from '../../services/api';
 
 interface NewActivyModalProps{
     isOpen: boolean;
@@ -20,7 +21,7 @@ interface NewActivyModalData{
 export function NewActivyModal({isOpen, onRequestClose}:NewActivyModalProps){
 
     const {register, handleSubmit, formState: {errors}} = useForm<NewActivyModalData>()
-    const onSubmit = handleSubmit(data => alert(JSON.stringify(data)))
+    const onSubmit = handleSubmit(data => api.post('/activy', data).then(response => alert(response.data)))
 
     return(
         <Modal
