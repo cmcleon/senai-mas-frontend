@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { shade } from 'polished';
 
 import loginBackgroundImg from '../../assets/bg-shapes.svg';
@@ -15,6 +15,7 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     width: 100%;
     max-width: 700px;
 `;
@@ -28,7 +29,8 @@ export const FormContainer = styled.div`
     h2 {
         margin-bottom: 30px;
         font-weight: bold;
-        color: #3CB371;  
+        color: #3CB371;
+        
     }
 
     a {
@@ -49,6 +51,7 @@ export const FormContainer = styled.div`
     display: block;
     margin-top: 24px;
     text-decoration: none;
+
     display: flex;
     align-items: center;
     transition: color 0.2s;
@@ -68,8 +71,10 @@ export const InputContainer = styled.div`
     border-radius: 10px;
     padding: 16px;
     width: 100%;
+
     border: 2px solid #3CB371;
     color: #3CB371;
+
     display: flex;
     align-items: center;
 
@@ -98,7 +103,7 @@ export const Error = styled.span`
     font-size: 0.9rem;
     font-weight: bold;
     color: coral;
-`
+`;
 
 export const Background = styled.div`
   flex: 1;
