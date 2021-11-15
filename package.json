@@ -11,6 +11,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-modal": "^3.13.1",
+    "authorization": "^1.0.9",
     "axios": "^0.24.0",
     "date-fns": "^2.25.0",
     "polished": "^4.1.3",
