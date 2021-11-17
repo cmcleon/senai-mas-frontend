@@ -29,13 +29,12 @@ export function NewActivyModal({isOpen, onRequestClose}:NewActivyModalProps) {
     const [courseUnits, setCourseUnits] = useState<CourseUnit[]>([]);
 
     useEffect(() => {
-        api.get('/courseunit')
-            .then(response => setCourseUnits(response.data))
+        api.get('/courseunit').then(response => setCourseUnits(response.data))
     },[])
 
     const { register, handleSubmit, formState: {errors} } = useForm<NewActivyModalData>();
     
-    const onSubmit = handleSubmit(data => api.post('/activy', data)
+    const onSubmit = handleSubmit(async data => api.post('/activy', data)
         .then(onRequestClose));
 
     return(

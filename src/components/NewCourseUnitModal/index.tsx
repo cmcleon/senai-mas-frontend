@@ -19,8 +19,7 @@ export function NewCourseUnitModal({isOpen, onRequestClose}:NewCourseUnitModalPr
 
     const { register, handleSubmit, formState: {errors} } = useForm<NewCourseUnitModalData>();
     
-    const onSubmit = handleSubmit(data => api.post('/courseunit', data)
-        .then(onRequestClose));
+    const onSubmit = handleSubmit(async data => api.post('/courseunit', data).then(onRequestClose));
 
     return(
         <Modal
@@ -42,13 +41,13 @@ export function NewCourseUnitModal({isOpen, onRequestClose}:NewCourseUnitModalPr
                     <input 
                         type="text"
                         placeholder="Nome"
-                        {...register("name")}
+                        {...register("name",{required:true})}
                     />
                     {errors.name && <Error>O prenchimento do campo é obrigatório</Error>}
                     <input 
                         type="text"
                         placeholder="Descrição"
-                        {...register("description")}
+                        {...register("description", {required:true})}
                     />
                     {errors.description && <Error>O prenchimento do campo é obrigatório</Error>}
                     <button type="submit">
