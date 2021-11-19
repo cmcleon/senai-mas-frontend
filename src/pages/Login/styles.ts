@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { shade } from 'polished';
 
 import loginBackgroundImg from '../../assets/bg-shapes.svg';
@@ -103,8 +103,7 @@ export const Error = styled.span`
     font-size: 0.9rem;
     font-weight: bold;
     color: coral;
-`
-
+`;
 
 export const Background = styled.div`
   flex: 1;
